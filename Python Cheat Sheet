@@ -1,0 +1,243 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+Cheat sheet of Python commands and variables
+"""
+import string,random
+import os
+import collections,Counter,nltk
+
+print("Hello Word")
+a=10
+b=2.9983
+print(" %.3f" %b)
+b2=int(b)
+
+print(b2)
+s="hello world"
+print("%20s" %s)
+x=8//5
+print("value of x = ",x)
+
+name = "This is chirag khetnai"
+name2=name.replace("chirag","komal").upper().swapcase()
+print(name)
+print(name2)
+s_string = "this is string"
+type(a)
+a=s_string.isdigit()
+b=s_string.isalnum()
+
+print(a,b)
+"""=--------------------------------------------"""
+phone_book={"chirag":{"address":"411s west street","c_no":"8388838844"},
+            "komal":{"address":"causley","c_no":"01010101"}}
+
+for key in phone_book:
+    address=phone_book[key]["address"]
+    print(key,address)
+            
+
+
+
+
+# not char in Python
+#------------------------------------------------------------------
+#-----------
+#x1 = int(input("Enter your the value"));
+#print("\n Hello ", x1)
+
+
+
+print(range(5))
+
+for l in range(2,5):
+    print(l)
+    
+s=set()
+
+
+l=["apple","pineple"]
+
+x=[a.upper for a in l]
+print(x)
+    
+    
+
+
+
+a_list="this is a t "
+print(a_list[2:3])
+
+b_list=[1,2]
+print(a_list+b_list)
+print(a_list)
+a_list.append("orange")
+a_list.sort()
+a_list.count("Mango")
+print(a_list.count("Mango"))
+
+
+
+b_list=("chair","table")
+a_list.extend(b_list)
+
+
+
+a_tupple=('a','b','c')
+
+# In dic order is not mainted because of hashing
+a_dic={"india":"New Delhi","Nepal":"Kathmandhu"}
+a_dic["Austrailia"]="Sydney"
+a_dic.update({"UK":"Londan"})
+print(a_dic)
+
+# sort by key
+"""
+# this code is not working
+a_dic_sorted_key=sorted(a_dic.items(),key=a_dic.itemgetter(0))
+print(a_dic_sorted_key)
+a_dic_sorted_key=sorted(a_dic.items(),key=operator.itemgetter(1))
+"""
+
+a_set={"laptop","ipad","microsoft","Lenovo"}
+
+
+s="this is string"
+s1=s[::-1]
+print(s1)
+
+
+my_string="this is@ jiny's idea to define this !! at 12.30 pm"
+
+
+# Sring Puctuation
+p=string.punctuation
+print(p)
+d=string.digits
+r=p+d
+print(s)
+
+table=str.maketrans(r,len(r)*" ")
+s=my_string.translate(table)
+print(s.replace("  "," "))
+
+#print("hello %f" %a)
+#a = 10
+#Random---------------------------------------------------------------
+
+
+# both inclusive
+a_rand=random.randint(1,6)
+print(a_rand)
+
+#0 to 5
+a_rand=random.randrange(1,6)
+print(a_rand)
+
+x_rand=random.choice(a_list)
+print(x_rand)
+
+
+
+s1=10
+def birthday(name="john",age=20):
+    global s1
+    s1=age
+    print(s1)    
+    print(name,"is",age)
+
+
+print(birthday("pete"))
+print(birthday(30))
+
+
+
+
+a=6
+
+if(a<6):
+    print("a is less than 5")
+
+elif(a>6):
+    print("a is greater than 6")
+else:
+    print("a=6")
+    
+
+i=1
+
+while i<=10:
+    print(i)
+    i+=1
+
+
+
+# open file
+
+i = 0
+os.chdir('C:\\Users\\chirag\\Desktop\\Data Science')
+f=open('abc.txt',"r")
+for line in f:
+     print(i)
+     print(line)
+     i = i+1
+
+list=f.readlines()
+print(list)
+print(f.readlines())
+contends=f.read().lower()
+contends=contends.replace("\n","")
+print(contends)
+words=contends.split()
+c=counter(words)
+f.close()
+
+# write to the file
+my_file=open("newfile.txt","w")
+my_string= "this is test write"
+my_file.write(my_string)
+my_file.close()
+
+
+f=open('abc.txt',"r")
+#f=open('xyz.txt',"w")
+lines=(f.readlines())
+
+print(len(lines))
+for line in lines:
+    print(line)
+    
+
+f.close()
+
+
+# Try except
+
+try: 
+    number=int(input("enter the number"))
+except:
+    print("can not convert string to #")
+    
+else:
+     print("you are good")
+
+
+dict={"chirag":["411 causley","3939932"]}
+print(dict.fromkeys("chirag"))
+
+
+
+
+#import pickle
+#import os
+
+
+
+
+    
+
+
+
+
