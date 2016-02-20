@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Feb 14 18:10:29 2016
+
+@author: chirag
+
+Address directory with Python Dictionary 
+"""
+
+import os, pickle
+n=""
+a=""
+c=""
+con={}
+
+def new():
+    n=input("Enter Name")
+    a=input("address")
+    c=input("contact no")
+    con[n]=[a,c]
+    print("added")
+    
+def del_rec():
+    n=input("enter name")
+    if(n not in con):
+        print("record dosent exist")
+    else:
+        del con[n]
+        print("removed")
+
+def display():
+    n=input("enter name")
+    print(con[n])
+
+def up_rec():
+    n=input("enter name")
+    print(con[n])
+    
+ 
+
+x=0
+def msg():
+    global x    
+    x=int(input("Enter 1:For new 2: for remove 3: for display 4 for exit"))
+    make_choice()
+    
+def make_choice():
+    if (x==1):
+        new()
+        msg()
+    elif(x==2):
+        del_rec()
+        msg()
+    elif(x==3):
+        display()
+        msg()
+    elif(x==4):
+        print("sucessfyly exited")    
+
+msg()    
