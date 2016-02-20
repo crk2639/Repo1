@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb 20 15:19:28 2016
+
+@author: chirag
+SQL lite create table_copy from CSV and display
+
+"""
+import sqlite3
+import os
+import pandas as pd
+
+
+
+os.chdir('C:\\Users\\chirag\\Desktop\\Data Science')
+
+connection=sqlite3.connect("phonebook.db")
+cur=connection.cursor()
+"""cur.execute('''create table contacts
+                (name text, address text)''')
+
+connection.commit()
+"""
+df=pd.read_csv("batsman.csv")
+
+
+def getName():
+    n=input("enter name")
+    return n
+
+def getAddress():
+    a=input("enter address")
+    return a
+    
+
+name=getName()
+address=getAddress()
+
+
+for i in range(len(df["avg"])):
+    #print(df["name"][i],df["l_name"][i])
+    cur.execute("""insert into contacts values(?,?)""",(df["name"][i],df["l_name"][i]))
+
+connection.commit()
+
+for row in cur.execute("select * from contacts"):
+    print(row)
+    
+
+
+
+
+
+
+
